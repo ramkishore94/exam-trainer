@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is create page</h1>
+  <div class="container">
+    <AddQuestion/>
   </div>
 </template>
+
+<script>
+import AddQuestion from '../components/AddQuestion.vue'
+
+export default {
+  name: 'Create',
+  components: {
+    AddQuestion
+  }
+}
+</script>
