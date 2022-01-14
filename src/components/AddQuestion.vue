@@ -12,21 +12,34 @@
       </div>
     </div>
     <div v-else-if="isEditorMode" class="container">
-      <div class="h1">This is editor mode.</div>
+      <edit-question :input="question"/>
     </div>
   </div>
 </template>
 
 <script>
+import EditQuestion from '../components/EditQuestion.vue'
+
 export default {
+  components: {
+    EditQuestion
+  },
   data: function () {
     return {
       isEditorMode: false,
-      question_input: '',
-      options_input: '',
+      // remove this
+      question_input: `43. A 28 year old woman was admitted to the emergency room with a slightly reddened, painful "knot" 8 cm
+above the medial malleolus. Examination in the standing position demonstrates a distended vein above and
+below the mass. There are no other abnormalities on physical examination. The most likely diagnosis is:`,
+      options_input: `A. Superficial venous thrombosis
+B. Insect bite
+C. Early deep vein thrombosis
+D. Cellulitis
+E. Subcutaneous hematoma`,
       question: {
         body: '',
-        options: []
+        options: [],
+        answer: Number
       }
     }
   },
